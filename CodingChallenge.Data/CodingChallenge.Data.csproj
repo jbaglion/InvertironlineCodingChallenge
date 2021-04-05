@@ -35,6 +35,9 @@
       <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MathParser.org-mXparser, Version=4.4.2.0, Culture=neutral, PublicKeyToken=0fbab7add73ed6e2, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathParser.org-mXparser.4.4.2\lib\net462\MathParser.org-mXparser.dll</HintPath>
+    </Reference>
     <Reference Include="Moq, Version=4.5.23.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.5.23\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
@@ -52,13 +55,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\FormaGeometrica.cs" />
+    <Compile Include="Clases\Factory\FormaFactory.cs" />
+    <Compile Include="Clases\HelpersModels\Formula.cs" />
+    <Compile Include="Clases\Factory\IFormaFactory.cs" />
+    <Compile Include="Clases\Formas\FormasConocidas\Circulo.cs" />
+    <Compile Include="Clases\Formas\FormasConocidas\Trapecio.cs" />
+    <Compile Include="Clases\Formas\FormasConocidas\Rectangulo.cs" />
+    <Compile Include="Clases\Formas\FormaGenerica.cs" />
+    <Compile Include="Clases\Formas\FormasConocidas\TrianguloEquilatero.cs" />
+    <Compile Include="Clases\Formas\FormasConocidas\Cuadrado.cs" />
+    <Compile Include="Clases\EjecucionFormaGeometrica.cs" />
+    <Compile Include="Clases\Formas\FormaGeometricaBase.cs" />
+    <Compile Include="Clases\HelpersModels\Idiomas.cs" />
+    <Compile Include="Clases\HelpersModels\Lados.cs" />
+    <Compile Include="Clases\HelpersModels\NombreIdioma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Res.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Res.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Res.en-US.resx" />
+    <EmbeddedResource Include="Res.pt.resx" />
+    <EmbeddedResource Include="Res.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Res.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
